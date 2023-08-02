@@ -29,6 +29,14 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//서버 껐다가 다시 안 켜도 됨
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//JUnit4 추가
+	testImplementation("org.junit.vintage:junit-vintage-engine") {
+		exclude group: "org.hamcrest", module: "hamcrest-core"
+	}
+	//Spring Boot DataSource Decorator
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${version}")
 }
 
 tasks.named('test') {
