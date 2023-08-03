@@ -22,15 +22,6 @@ public class Member {
 
     //연관관계 주인이 아님을 알려줌. Order테이블의 member필드에 의해 매핑 된거야. @JoinColumn(name = "member_id")와 짝
     @OneToMany(mappedBy = "member")
-    @JoinColumn(name = "member_id")
+    //@JoinColumn(name = "member_id")
     private List<Order> orders = new ArrayList<>();
-
-    private List<OrderItem> orderItems = new ArrayList<>();
-
-    private Delivery delivery;
-
-    private LocalDateTime orderDate; //주문시간
-
-    private OrderStatus  status; //주문상태 ORDER, CANCEL
-
 }
