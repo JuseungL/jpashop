@@ -3,6 +3,7 @@ package jpabook.jpashop.repository;
 import jakarta.persistence.EntityManager;
 import jpabook.jpashop.domain.item.Item;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class ItemRepository {
-
+    @Autowired
     private final EntityManager em;
 
     public void save(Item item) {
@@ -29,4 +30,6 @@ public class ItemRepository {
         return em.createQuery("SELECT i FROM Item i", Item.class)
                 .getResultList();
     }
+
+
 }
