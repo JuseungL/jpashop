@@ -58,4 +58,9 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name); //영속 상태
+    }//종료되면 스프링 AOP가 동작하고 @Transaction에 의해 JPA가 flush하여 영속성 컨텍스트 커밋시킴
 }
