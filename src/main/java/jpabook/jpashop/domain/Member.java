@@ -25,6 +25,7 @@ public class Member {
 
     //@JsonIgnoreAPI JSON나갈때 해당 필드는 안나감 근데 여러 API에서 쓸때는 문제가 되니까 엔티티에다가 쓰면 안됨
     //연관관계 주인이 아님을 알려줌. Order테이블의 member필드에 의해 매핑 된거야. @JoinColumn(name = "member_id")와 짝
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }

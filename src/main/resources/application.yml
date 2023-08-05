@@ -9,7 +9,7 @@ spring:
   suffix: .html
   jpa:
     hibernate:
-      ddl-auto: none #create해야 저장안되고 none하면 데이터 쌓임
+      ddl-auto: create #create해야 저장안되고 none하면 데이터 쌓임
     properties:
       hibernate:
 #        show_sql: true  이건 sysout으로 찍는거라 밑에 logging이 나음
