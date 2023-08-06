@@ -14,6 +14,7 @@ spring:
       hibernate:
 #        show_sql: true  이건 sysout으로 찍는거라 밑에 logging이 나음
         format_sql: true
+        default_batch_fetch_size: 1000
 
 logging.level:
   org.hibernate.SQL: debug
