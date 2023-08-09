@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+//엔티티들이 JPA를 통해 DB에 매핑된다.
 @Entity
 @Setter @Getter
 public class Member {
